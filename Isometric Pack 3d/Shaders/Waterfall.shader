@@ -151,8 +151,8 @@ Shader "Shader Forge/Waterfall" {
                 #else
                     d.ambient = i.ambientOrLightmapUV;
                 #endif
-                d.boxMax[0] = unity_SpecCube0_BoxMax;
-                d.boxMin[0] = unity_SpecCube0_BoxMin;
+                //d.boxMax[0] = unity_SpecCube0_BoxMax;
+                //d.boxMin[0] = unity_SpecCube0_BoxMin;
                 d.probePosition[0] = unity_SpecCube0_ProbePosition;
                 d.probeHDR[0] = unity_SpecCube0_HDR;
                 d.boxMax[1] = unity_SpecCube1_BoxMax;

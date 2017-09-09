@@ -7,12 +7,12 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Water
-  m_Shader: {fileID: 4800000, guid: 7c5c9c0be55758945b2db7b85f7951ff, type: 3}
+  m_Shader: {fileID: 4800000, guid: 1fbc789d845c20248a9a743f50307d9e, type: 3}
   m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -121,11 +121,13 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.19117647, g: 0.19117647, b: 0.19117647, a: 1}
     - _Boobles: {r: 0, g: 0.41318446, b: 0.61764705, a: 1}
+    - _CausticColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0, g: 0.33189642, b: 0.5661765, a: 1}
     - _Color1: {r: 0.4411765, g: 0.2099391, b: 0, a: 1}
     - _Color2: {r: 0.9568627, g: 0.8509804, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Water: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _WaterColor: {r: 0.05471455, g: 0.4963757, b: 0.6764706, a: 1}
     - _Waters: {r: 0, g: 0.4117647, b: 0.6156863, a: 1}
     - _node_190: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _node_6618: {r: 0.5, g: 0.5, b: 0.5, a: 1}
