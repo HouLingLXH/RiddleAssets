@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelWindow : UIBase {
 
     public GameObject btn;
+    public const string s_assetPath = "ui/levelwindow";
+
     private void Start()
     {
 
@@ -25,6 +28,12 @@ public class LevelWindow : UIBase {
     public override void OnUpdate()
     {
         base.OnUpdate();
+        if (AssetBundleManager.s_async_operation != null)
+        {
+            Debug.Log(AssetBundleManager.s_async_operation.progress);
+        }
+        
+
     }
 
     public override void OnClose()
@@ -35,7 +44,27 @@ public class LevelWindow : UIBase {
     public void Btn_LevelSelect(int index)
     {
         Debug.Log("选择关卡" + index);
-        AnimSystem.Move(btn,from:null,to: Vector3.one * 10000,time:1);
+        AnimSystem.Move(btn,from:null,to: Vector3.one * 10000,time:1,callBack:(o)=>
+        {
+           
+        });
+
+        StartCoroutine(AssetBundleManager.LoadScene("scene/main2", "Main2", callBack: () =>
+        {
+            AnimSystem.StopAnim(btn);
+        }));
+
+
+
+
     }
+
+    //private IEnumerator LoadScene(string bundlePath, string sceneName)
+    //{
+    //    yield return AssetBundleManager.LoadScene<Object>(bundlePath, sceneName);
+
+        
+    //}
+
 
 }
