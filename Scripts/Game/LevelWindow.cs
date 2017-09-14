@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class LevelWindow : UIBase {
 
     public GameObject btn;
+    public InputField input;
     public const string s_assetPath = "ui/levelwindow";
 
     private void Start()
@@ -49,7 +50,7 @@ public class LevelWindow : UIBase {
            
         });
 
-        StartCoroutine(AssetBundleManager.LoadScene("scene/main2", "Main2", callBack: () =>
+        StartCoroutine(AssetBundleManager.LoadScene("scene/level/level_" + input.text, "level_" + input.text, callBack: () =>
         {
             AnimSystem.StopAnim(btn);
         }));
