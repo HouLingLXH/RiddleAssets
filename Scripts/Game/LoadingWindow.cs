@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class LoadingWindow : UIBase {
 
+    public const string c_assetPath ="ui/loadingwindow";
+
     public Slider loadProgress;
 
     public override void OnInit()
@@ -34,7 +36,7 @@ public class LoadingWindow : UIBase {
         }
         else
         {
-            UIManager.OpenUI<LevelWindow>(LevelWindow.s_assetPath);
+            UIManager.OpenUI<LevelWindow>(LevelWindow.c_assetPath);
             OnClose();
         }
         
