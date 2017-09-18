@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 585742026
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ee9e1a075ca88b1e5b74c18d4b50ec57
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9ffa73f01aa172fc7ee78e46e86c82a3
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 065b814b77a18f34da070c3bc3f1ed80, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/Res/Prefab/Player/Player.prefab
+Dependencies: []

@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 223433329618148102}
   - component: {fileID: 114282056379868620}
   - component: {fileID: 114341197471384750}
+  - component: {fileID: 114410977497902654}
   m_Layer: 5
   m_Name: FightWindow
   m_TagString: Untagged
@@ -136,6 +137,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114410977497902654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865361888140044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc206003f29eb544ae73d91aeb459dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comp_rocker: {fileID: 114138635637552824}
 --- !u!114 &114837314335193290
 MonoBehaviour:
   m_ObjectHideFlags: 1

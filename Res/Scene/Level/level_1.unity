@@ -508,6 +508,7 @@ GameObject:
   - component: {fileID: 1066805363}
   - component: {fileID: 1066805362}
   - component: {fileID: 1066805367}
+  - component: {fileID: 1066805368}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -599,6 +600,23 @@ MonoBehaviour:
   tran_followTarget: {fileID: 0}
   tran_camera: {fileID: 1066805366}
   n_softFollowSpeed: 2
+--- !u!114 &1066805368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1066805361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f8944348b5bd94893fb6b0201a51ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  v3_startPoint: {x: 2.065, y: 2.613, z: -2.254}
+  go_mainCamera: {fileID: 0}
+  comp_cameraFollow: {fileID: 0}
+  go_player: {fileID: 0}
+  comp_playerMove: {fileID: 0}
+  ui_fightWindow: {fileID: 0}
 --- !u!1 &1215240288
 GameObject:
   m_ObjectHideFlags: 0

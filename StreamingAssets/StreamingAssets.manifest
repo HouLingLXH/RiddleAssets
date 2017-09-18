@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 1399351321
+CRC: 962165009
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -16,4 +16,10 @@ AssetBundleManifest:
       Dependencies: {}
     Info_4:
       Name: scene/level/level_2
+      Dependencies: {}
+    Info_5:
+      Name: player
+      Dependencies: {}
+    Info_6:
+      Name: ui/fightwindow
       Dependencies: {}
