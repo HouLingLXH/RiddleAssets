@@ -9,4 +9,23 @@ public class GearMoveBase : GearBase {
     public Vector3[] v3s_moveTo;
     public float[] ns_moveTime;
 
+
+    protected void ChildMove()
+    {
+        for (int i = 0; i < gos_child.Length; i++)
+        {
+            AnimSystem.StopAnim(gos_child[i]);
+            AnimSystem.Move(gos_child[i], null, v3s_moveTo[i], 0, ns_moveTime[i], interp: InterpType.OutQuad);
+        }
+    }
+
+    protected void ChildRehome()
+    {
+        for (int i = 0; i < gos_child.Length; i++)
+        {
+            AnimSystem.StopAnim(gos_child[i]);
+            AnimSystem.Move(gos_child[i], null, v3s_moveFrom[i], 0, ns_moveTime[i], interp: InterpType.InoutQuad);
+        }
+    }
+
 }

@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//占领移动机关 ： 进入时触发移动 ，退出时还原移动
-public class GearHoldMove : GearMoveBase
-{
-
+public class GearHoldRotate : GearRotateBase {
 
     public override void TriggerEnter(Collider other)
     {
         base.TriggerEnter(other);
-        ChildMove();
+        ChildRotate();
     }
 
     public override void TriggerExit(Collider other)
@@ -18,8 +15,5 @@ public class GearHoldMove : GearMoveBase
         base.TriggerExit(other);
         ChildRehome();
     }
-
-   
-
 
 }
