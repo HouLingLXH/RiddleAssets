@@ -44,6 +44,11 @@ public class GearBase : MonoBehaviour {
             Gizmos.DrawWireSphere(transform.position, 0.5f);
         }
 
+        if (gos_child == null)
+        {
+            return;
+        }
+
         for (int i = 0; i < gos_child.Length; i++)
         {
             Gizmos.DrawLine(transform.position, gos_child[i].transform.position);

@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 33927420360063048}
   - component: {fileID: 65812059814310946}
   - component: {fileID: 23422383958577484}
-  - component: {fileID: 114900730860689926}
+  - component: {fileID: 114127845592775050}
   m_Layer: 0
-  m_Name: Gear_SwitchMove
+  m_Name: Gear_SwitchChangeMaterial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114900730860689926
+--- !u!114 &114127845592775050
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -102,13 +102,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1446835016020592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a01f9fc929024ef47a2f8b210850636e, type: 3}
+  m_Script: {fileID: 11500000, guid: b90f3d74fb2c0ee4ab0371c2c600dab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   n_id: 0
   gos_child: []
-  col_gizmoColor: {r: 0, g: 0, b: 1, a: 1}
-  v3s_moveFrom: []
-  v3s_moveTo: []
-  ns_moveTime: []
-  canOff: 1
+  col_gizmoColor: {r: 0, g: 1, b: 0.751724, a: 1}
+  fromMaterial: {fileID: 0}
+  toMaterial: {fileID: 0}
+  b_canOff: 0
