@@ -34,10 +34,11 @@ Shader "MK4/Grid" {
             #include "UnityPBSLighting.cginc"
             #include "UnityStandardBRDF.cginc"
             #pragma multi_compile_fwdbase
-            #pragma exclude_renderers gles3 metal d3d11_9x xbox360 xboxone ps3 ps4 psp2 
+           // #pragma exclude_renderers gles3 metal d3d11_9x xbox360 xboxone ps3 ps4 psp2 
             #pragma target 3.0
             uniform sampler2D _CameraDepthTexture;
-            uniform sampler2D _MainTex; uniform float4 _MainTex_ST;
+            uniform sampler2D _MainTex; 
+			uniform float4 _MainTex_ST;
             uniform float4 _TintColor;
             uniform float _DepthClip;
             struct VertexInput {
@@ -58,8 +59,8 @@ Shader "MK4/Grid" {
                 o.normalDir = UnityObjectToWorldNormal(v.normal);
                 o.posWorld = mul(unity_ObjectToWorld, v.vertex);
                 o.pos = UnityObjectToClipPos(v.vertex );
-                o.projPos = ComputeScreenPos (o.pos);
-                COMPUTE_EYEDEPTH(o.projPos.z);
+                //o.projPos = ComputeScreenPos (o.pos);
+                //COMPUTE_EYEDEPTH(o.projPos.z);
                 return o;
             }
             float4 frag(VertexOutput i) : COLOR {
