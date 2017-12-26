@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Tile1
-  m_Shader: {fileID: 4800000, guid: 24b8b5debc6f5da46bdcf0f3d3888cb6, type: 3}
+  m_Shader: {fileID: 4800000, guid: 00a848abfdc358a40943641c081aa3ee, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0

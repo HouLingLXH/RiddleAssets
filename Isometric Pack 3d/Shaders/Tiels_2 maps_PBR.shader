@@ -133,13 +133,27 @@ Shader "MK4/Tiels_2Maps_PBR" {
                 #else
                     d.ambient = i.ambientOrLightmapUV;
                 #endif
-                d.boxMax[0] = unity_SpecCube0_BoxMax;
-                d.boxMin[0] = unity_SpecCube0_BoxMin;
-                d.probePosition[0] = unity_SpecCube0_ProbePosition;
+				#if defined(UNITY_SPECCUBE_BLENDING) || defined(UNITY_SPECCUBE_BOX_PROJECTION)
+					d.boxMax[0] = unity_SpecCube0_BoxMax;
+					d.boxMin[0] = unity_SpecCube0_BoxMin;
+					d.boxMax[1] = unity_SpecCube1_BoxMax;
+					d.boxMin[1] = unity_SpecCube1_BoxMin;
+				#endif
+				#ifdef UNITY_SPECCUBE_BOX_PROJECTION
+					d.boxMax[0] = unity_SpecCube0_BoxMax;
+					d.boxMin[0] = unity_SpecCube0_BoxMin;
+					d.probePosition[0] = unity_SpecCube0_ProbePosition;
+					d.boxMax[1] = unity_SpecCube1_BoxMax;
+					d.boxMin[1] = unity_SpecCube1_BoxMin;
+					d.probePosition[1] = unity_SpecCube1_ProbePosition;
+				#endif
+                //d.boxMax[0] = unity_SpecCube0_BoxMax;
+                //d.boxMin[0] = unity_SpecCube0_BoxMin;
+                //d.probePosition[0] = unity_SpecCube0_ProbePosition;
                 d.probeHDR[0] = unity_SpecCube0_HDR;
-                d.boxMax[1] = unity_SpecCube1_BoxMax;
-                d.boxMin[1] = unity_SpecCube1_BoxMin;
-                d.probePosition[1] = unity_SpecCube1_ProbePosition;
+                //d.boxMax[1] = unity_SpecCube1_BoxMax;
+                //d.boxMin[1] = unity_SpecCube1_BoxMin;
+                //d.probePosition[1] = unity_SpecCube1_ProbePosition;
                 d.probeHDR[1] = unity_SpecCube1_HDR;
                 Unity_GlossyEnvironmentData ugls_en_data;
                 ugls_en_data.roughness = 1.0 - gloss;
@@ -295,13 +309,27 @@ Shader "MK4/Tiels_2Maps_PBR" {
                 #else
                     d.ambient = i.ambientOrLightmapUV;
                 #endif
-                d.boxMax[0] = unity_SpecCube0_BoxMax;
-                d.boxMin[0] = unity_SpecCube0_BoxMin;
-                d.probePosition[0] = unity_SpecCube0_ProbePosition;
+				#if defined(UNITY_SPECCUBE_BLENDING) || defined(UNITY_SPECCUBE_BOX_PROJECTION)
+					d.boxMax[0] = unity_SpecCube0_BoxMax;
+					d.boxMin[0] = unity_SpecCube0_BoxMin;
+					d.boxMax[1] = unity_SpecCube1_BoxMax;
+					d.boxMin[1] = unity_SpecCube1_BoxMin;
+				#endif
+				#ifdef UNITY_SPECCUBE_BOX_PROJECTION
+					d.boxMax[0] = unity_SpecCube0_BoxMax;
+					d.boxMin[0] = unity_SpecCube0_BoxMin;
+					d.probePosition[0] = unity_SpecCube0_ProbePosition;
+					d.boxMax[1] = unity_SpecCube1_BoxMax;
+					d.boxMin[1] = unity_SpecCube1_BoxMin;
+					d.probePosition[1] = unity_SpecCube1_ProbePosition;
+				#endif
+                //d.boxMax[0] = unity_SpecCube0_BoxMax;
+                //d.boxMin[0] = unity_SpecCube0_BoxMin;
+                //d.probePosition[0] = unity_SpecCube0_ProbePosition;
                 d.probeHDR[0] = unity_SpecCube0_HDR;
-                d.boxMax[1] = unity_SpecCube1_BoxMax;
-                d.boxMin[1] = unity_SpecCube1_BoxMin;
-                d.probePosition[1] = unity_SpecCube1_ProbePosition;
+                //d.boxMax[1] = unity_SpecCube1_BoxMax;
+                //d.boxMin[1] = unity_SpecCube1_BoxMin;
+                //d.probePosition[1] = unity_SpecCube1_ProbePosition;
                 d.probeHDR[1] = unity_SpecCube1_HDR;
                 Unity_GlossyEnvironmentData ugls_en_data;
                 ugls_en_data.roughness = 1.0 - gloss;

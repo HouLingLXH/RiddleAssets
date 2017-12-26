@@ -63,11 +63,11 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Gloss: 0.158
+    - _Gloss: 0
     - _Glossiness: 0
-    - _Metallic: 0.299
+    - _Metallic: 0
     - _Mode: 0
-    - _NoiseScale: 0.839
+    - _NoiseScale: 0.833
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SrcBlend: 1
@@ -76,4 +76,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Glow: {r: 0, g: 0.46206903, b: 1, a: 1}
+    - _Glow: {r: 0, g: 0.41790068, b: 0.9044118, a: 1}

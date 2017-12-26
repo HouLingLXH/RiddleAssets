@@ -44,7 +44,7 @@ Shader "MK4/Water" {
             #pragma multi_compile LIGHTMAP_OFF LIGHTMAP_ON
             #pragma multi_compile DIRLIGHTMAP_OFF DIRLIGHTMAP_COMBINED DIRLIGHTMAP_SEPARATE
             #pragma multi_compile DYNAMICLIGHTMAP_OFF DYNAMICLIGHTMAP_ON
-            #pragma exclude_renderers gles gles3 metal d3d11_9x xbox360 xboxone ps3 ps4 psp2 
+            #pragma exclude_renderers gles3 metal d3d11_9x xbox360 xboxone ps3 ps4 psp2 
             #pragma target 3.0
             uniform float4 _TimeEditor;
             uniform float _Metallic;
@@ -155,13 +155,27 @@ Shader "MK4/Water" {
                 #else
                     d.ambient = i.ambientOrLightmapUV;
                 #endif
-                d.boxMax[0] = unity_SpecCube0_BoxMax;
-                d.boxMin[0] = unity_SpecCube0_BoxMin;
-                d.probePosition[0] = unity_SpecCube0_ProbePosition;
+				#if defined(UNITY_SPECCUBE_BLENDING) || defined(UNITY_SPECCUBE_BOX_PROJECTION)
+					d.boxMax[0] = unity_SpecCube0_BoxMax;
+					d.boxMin[0] = unity_SpecCube0_BoxMin;
+					d.boxMax[1] = unity_SpecCube1_BoxMax;
+					d.boxMin[1] = unity_SpecCube1_BoxMin;
+				#endif
+				#ifdef UNITY_SPECCUBE_BOX_PROJECTION
+					d.boxMax[0] = unity_SpecCube0_BoxMax;
+					d.boxMin[0] = unity_SpecCube0_BoxMin;
+					d.probePosition[0] = unity_SpecCube0_ProbePosition;
+					d.boxMax[1] = unity_SpecCube1_BoxMax;
+					d.boxMin[1] = unity_SpecCube1_BoxMin;
+					d.probePosition[1] = unity_SpecCube1_ProbePosition;
+				#endif
+                //d.boxMax[0] = unity_SpecCube0_BoxMax;
+                //d.boxMin[0] = unity_SpecCube0_BoxMin;
+                //d.probePosition[0] = unity_SpecCube0_ProbePosition;
                 d.probeHDR[0] = unity_SpecCube0_HDR;
-                d.boxMax[1] = unity_SpecCube1_BoxMax;
-                d.boxMin[1] = unity_SpecCube1_BoxMin;
-                d.probePosition[1] = unity_SpecCube1_ProbePosition;
+                //d.boxMax[1] = unity_SpecCube1_BoxMax;
+                //d.boxMin[1] = unity_SpecCube1_BoxMin;
+                //d.probePosition[1] = unity_SpecCube1_ProbePosition;
                 d.probeHDR[1] = unity_SpecCube1_HDR;
                 Unity_GlossyEnvironmentData ugls_en_data;
                 ugls_en_data.roughness = 1.0 - gloss;
@@ -225,7 +239,7 @@ Shader "MK4/Water" {
             #pragma multi_compile LIGHTMAP_OFF LIGHTMAP_ON
             #pragma multi_compile DIRLIGHTMAP_OFF DIRLIGHTMAP_COMBINED DIRLIGHTMAP_SEPARATE
             #pragma multi_compile DYNAMICLIGHTMAP_OFF DYNAMICLIGHTMAP_ON
-            #pragma exclude_renderers gles gles3 metal d3d11_9x xbox360 xboxone ps3 ps4 psp2 
+            #pragma exclude_renderers gles3 metal d3d11_9x xbox360 xboxone ps3 ps4 psp2 
             #pragma target 3.0
             uniform float4 _TimeEditor;
             uniform float _Metallic;

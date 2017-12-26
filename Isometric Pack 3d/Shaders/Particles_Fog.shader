@@ -34,7 +34,7 @@ Shader "MK4/Particles_Fog" {
             #include "UnityCG.cginc"
             #pragma multi_compile_fwdbase
             #pragma multi_compile_fog
-            #pragma exclude_renderers metal d3d11_9x xbox360 xboxone ps3 ps4 psp2 
+            #pragma exclude_renderers gles3 metal d3d11_9x xbox360 xboxone ps3 ps4 psp2 
             #pragma target 3.0
             uniform sampler2D _CameraDepthTexture;
             uniform float4 _TimeEditor;
