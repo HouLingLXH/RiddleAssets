@@ -26,6 +26,8 @@ namespace UnityStandardAssets.ImageEffects
         public Shader fogShader = null;
         private Material fogMaterial = null;
 
+        Camera cam;
+        Transform camtr;
 
         public override bool CheckResources ()
 		{
@@ -47,8 +49,17 @@ namespace UnityStandardAssets.ImageEffects
                 return;
             }
 
-			Camera cam = GetComponent<Camera>();
-			Transform camtr = cam.transform;
+            if (cam == null)
+            {
+                cam = GetComponent<Camera>();
+            }
+
+            if (camtr == null)
+            {
+                camtr = cam.transform;
+            }
+
+		
 			float camNear = cam.nearClipPlane;
 			float camFar = cam.farClipPlane;
 			float camFov = cam.fieldOfView;
@@ -58,10 +69,10 @@ namespace UnityStandardAssets.ImageEffects
 
 			float fovWHalf = camFov * 0.5f;
 
-			Vector3 toRight = camtr.right * camNear * Mathf.Tan (fovWHalf * Mathf.Deg2Rad) * camAspect;
-			Vector3 toTop = camtr.up * camNear * Mathf.Tan (fovWHalf * Mathf.Deg2Rad);
+            Vector3 toRight = camtr.right * camNear * Mathf.Tan(fovWHalf * Mathf.Deg2Rad) * camAspect;
+            Vector3 toTop = camtr.up * camNear * Mathf.Tan(fovWHalf * Mathf.Deg2Rad);
 
-			Vector3 topLeft = (camtr.forward * camNear - toRight + toTop);
+            Vector3 topLeft = (camtr.forward * camNear - toRight + toTop);
 			float camScale = topLeft.magnitude * camFar/camNear;
 
             topLeft.Normalize();
