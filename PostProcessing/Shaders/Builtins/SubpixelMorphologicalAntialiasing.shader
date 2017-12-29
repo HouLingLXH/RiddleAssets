@@ -2,7 +2,7 @@ Shader "Hidden/PostProcessing/SubpixelMorphologicalAntialiasing"
 {
     HLSLINCLUDE
 
-        #pragma exclude_renderers d3d11_9x
+        //#pragma exclude_renderers d3d11_9x
         #include "../StdLib.hlsl"
 
         // High/Very-high settings
@@ -23,7 +23,7 @@ Shader "Hidden/PostProcessing/SubpixelMorphologicalAntialiasing"
         #define LinearSampler sampler_MainTex
         #define PointSampler sampler_MainTex
 
-        #include "SubpixelMorphologicalAntialiasing.hlsl"
+        //#include "SubpixelMorphologicalAntialiasing.hlsl"
 
         // ----------------------------------------------------------------------------------------
         // Edge Detection
@@ -34,6 +34,14 @@ Shader "Hidden/PostProcessing/SubpixelMorphologicalAntialiasing"
             float2 texcoord : TEXCOORD0;
             float4 offsets[3] : TEXCOORD1;
         };
+
+		float4 mad(float4 a,float4 b,float4 c)
+		{
+			float4 d;
+			d = a;
+			return d;
+		}
+
 
         VaryingsEdge VertEdge(AttributesDefault v)
         {
@@ -52,9 +60,11 @@ Shader "Hidden/PostProcessing/SubpixelMorphologicalAntialiasing"
             return o;
         }
 
+
         float4 FragEdge(VaryingsEdge i) : SV_Target
         {
-            return float4(SMAAColorEdgeDetectionPS(i.texcoord, i.offsets, _MainTex), 0.0, 0.0);
+            //return float4(SMAAColorEdgeDetectionPS(i.texcoord, i.offsets, _MainTex), 0.0, 0.0); es3没有此方法
+			return float4(1,1,1,1);
         }
 
         // ----------------------------------------------------------------------------------------
@@ -93,7 +103,8 @@ Shader "Hidden/PostProcessing/SubpixelMorphologicalAntialiasing"
 
         float4 FragBlend(VaryingsBlend i) : SV_Target
         {
-            return SMAABlendingWeightCalculationPS(i.texcoord, i.pixcoord, i.offsets, _MainTex, _AreaTex, _SearchTex, 0);
+            //return SMAABlendingWeightCalculationPS(i.texcoord, i.pixcoord, i.offsets, _MainTex, _AreaTex, _SearchTex, 0); //es3 无此方法
+         	return float4(1,1,1,1);
         }
 
         // ----------------------------------------------------------------------------------------
@@ -122,7 +133,8 @@ Shader "Hidden/PostProcessing/SubpixelMorphologicalAntialiasing"
 
         float4 FragNeighbor(VaryingsNeighbor i) : SV_Target
         {
-            return SMAANeighborhoodBlendingPS(i.texcoord, i.offset, _MainTex, _BlendTex);
+            //return SMAANeighborhoodBlendingPS(i.texcoord, i.offset, _MainTex, _BlendTex); //es3无此方法
+			return float4(1,1,1,1);
         }
 
     ENDHLSL
