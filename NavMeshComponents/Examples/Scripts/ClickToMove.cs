@@ -17,6 +17,7 @@ public class ClickToMove : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
         {
+
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray.origin, ray.direction, out m_HitInfo))
                 m_Agent.destination = m_HitInfo.point;
