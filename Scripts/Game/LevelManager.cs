@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour {
         comp_cameraFollow = GetComponent<CameraFollow>();
         comp_cameraFollow.Tran_FollowTarget = go_player.transform;
 
-        Timer.DelayPlay(2, ShowFightWindow);
+        //Timer.DelayPlay(2, ShowFightWindow);
     }
 
     private void ShowFightWindow(params object[] arg)
