@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.9088264, g: 0.81867963, b: 0.5950591, a: 1}
+  m_IndirectSpecularColor: {r: 0.92803603, g: 0.83743584, b: 0.6402008, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -818,7 +818,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 479727473}
-  m_LocalRotation: {x: -0.2906251, y: -0.217123, z: 0.06789567, w: -0.92940027}
+  m_LocalRotation: {x: -0.29062748, y: -0.21712144, z: 0.067894496, w: -0.92939997}
   m_LocalPosition: {x: -13.09, y: 11.23, z: -10.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1086,19 +1086,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4523019905798716, guid: e6c90bc788d190a4d8c38f9b133ed99c, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.2906251
+      value: -0.29062748
       objectReference: {fileID: 0}
     - target: {fileID: 4523019905798716, guid: e6c90bc788d190a4d8c38f9b133ed99c, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.217123
+      value: -0.21712144
       objectReference: {fileID: 0}
     - target: {fileID: 4523019905798716, guid: e6c90bc788d190a4d8c38f9b133ed99c, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.06789567
+      value: 0.067894496
       objectReference: {fileID: 0}
     - target: {fileID: 4523019905798716, guid: e6c90bc788d190a4d8c38f9b133ed99c, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.92940027
+      value: -0.92939997
       objectReference: {fileID: 0}
     - target: {fileID: 4523019905798716, guid: e6c90bc788d190a4d8c38f9b133ed99c, type: 2}
       propertyPath: m_RootOrder
@@ -1171,6 +1171,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Cinemachine.CinemachineBrain+VcamEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &849089008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 849088999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095b9c0d636ae1e4186768190203f281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motionBlurShader: {fileID: 4800000, guid: 82cd9463bd2b71d42861be1cd011d732, type: 3}
+  blend: 0.61
+  lastTex: {fileID: 1779502160}
 --- !u!1001 &887057988
 Prefab:
   m_ObjectHideFlags: 0
@@ -1901,6 +1915,33 @@ Transform:
   m_PrefabParentObject: {fileID: 4226842479265722, guid: c423142457c3b0e48a8845edfbfa4ce2,
     type: 2}
   m_PrefabInternal: {fileID: 1743407337}
+--- !u!84 &1779502160
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 960
+  m_Height: 540
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &1813869052
 Prefab:
   m_ObjectHideFlags: 0

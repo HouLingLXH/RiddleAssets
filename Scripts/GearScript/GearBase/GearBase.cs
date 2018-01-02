@@ -34,13 +34,13 @@ public class GearBase : MonoBehaviour {
         if (collider is BoxCollider)
         {
            
-            BoxCollider boxCollider = new BoxCollider();
+            //BoxCollider boxCollider = new BoxCollider();
             Gizmos.DrawCube(transform.position ,Vector3.one * 0.5f);
         }
 
         if (collider is SphereCollider)
         {
-            SphereCollider sphereCollider = new SphereCollider();
+            //SphereCollider sphereCollider = new SphereCollider();
             Gizmos.DrawWireSphere(transform.position, 0.5f);
         }
 
