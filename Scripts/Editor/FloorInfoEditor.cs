@@ -154,8 +154,10 @@ public class FloorInfoEditor :Editor{
         {
             floorInfoItem.ApplyAndAlignFromPosition();
         }
+        BitchCreat();
 
-   
+
+
 
 
         GUILayout.EndVertical();
@@ -182,11 +184,50 @@ public class FloorInfoEditor :Editor{
         }
         for (int i = 0; i < allFloorInfo.Count; i++)
         {
+            if (allFloorInfo[i] == null)
+            {
+                continue;
+            }
             FloorInfo floorInfo = allFloorInfo[i].floorInfo;
             Vector3 v3_pos = allFloorInfo[i].transform.position;
             GUI.color = Color.black;
             Handles.Label(v3_pos + floorInfoShowOffset, "(" + floorInfo.x + "," + floorInfo.z + ")");
         }
+    }
+
+
+    private Vector3Int v3_bitchCreat_from;
+    private Vector3Int v3_bitchCreat_to;
+    //批量创建
+    private void BitchCreat()
+    {
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("From:", GUILayout.Width(50));
+        v3_bitchCreat_from.x = int.Parse( GUILayout.TextField(v3_bitchCreat_from.x.ToString(), GUILayout.Width(50)));
+        v3_bitchCreat_from.z = int.Parse(GUILayout.TextField(v3_bitchCreat_from.z.ToString(), GUILayout.Width(50)));
+        if (GUILayout.Button("清空"))
+        {
+            if (EditorUtility.DisplayDialog("清空批量创建", "确定要清空批量创建嘛？ 数量：" + floorInfoItem.bitchCreats.Count, "是", "取消"))
+            {
+                floorInfoItem.ClearBitchCreat();
+            }
+        }
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("To:", GUILayout.Width(50));
+        v3_bitchCreat_to.x = int.Parse(GUILayout.TextField(v3_bitchCreat_to.x.ToString(), GUILayout.Width(50)));
+        v3_bitchCreat_to.z = int.Parse(GUILayout.TextField(v3_bitchCreat_to.z.ToString(), GUILayout.Width(50)));
+
+        if (GUILayout.Button("批量创建"))
+        {
+            if (EditorUtility.DisplayDialog("批量创建", "确定要批量创建嘛？ " + floorInfoItem.name, "是", "取消"))
+            {
+                floorInfoItem.BatchCreat(v3_bitchCreat_from, v3_bitchCreat_to);
+            }
+        }
+        GUILayout.EndHorizontal();
+
     }
 
     #endregion

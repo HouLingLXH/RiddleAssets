@@ -136,6 +136,44 @@ public class FloorItem : MonoBehaviour {
         ApplyPositionFromPos();
     }
 
+    [ContextMenu("四方向随机旋转")]
+    public void RandomRotate()
+    {
+        transform.localEulerAngles = new Vector3(0, 1, 0) * Random.Range(0, 4) * 90;
+    }
+
+
+    public List<GameObject> bitchCreats = new List<GameObject>(); //批量创建列表
+    //批量创建工具 - 给定起点与终点，平铺当前item
+    public void BatchCreat(Vector3Int from, Vector3Int to)
+    {
+        bitchCreats.Clear();
+        for (int x = from.x; x < to.x; x++)
+        {
+            for (int z = from.z; z < to.z; z++)
+            {
+                GameObject go = Instantiate(gameObject);
+                go.name = gameObject.name + "(" + x + "," + z + ")";
+                FloorItem item = go.GetComponent<FloorItem>();
+                item.X = x;
+                item.Z = z;
+                item.ApplyPosFromInput();
+                bitchCreats.Add(go);
+            }
+        }
+    }
+    //清空批量创建列表
+    public void ClearBitchCreat()
+    {
+        for (int i = 0; i < bitchCreats.Count; i++)
+        {
+            DestroyImmediate(bitchCreats[i]);
+        }
+    }
+
+
+
+
     #endregion
 
 }
